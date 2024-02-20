@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Caesar Cipher")
 
-text = st.text_input("Text:")
+text = st.text_area("Text:")
 shift_keys_input = st.text_input("Shift Keys:")
 
 if shift_keys_input:
