@@ -9,14 +9,15 @@ key = st.text_input("Key:")
 key = bytes(key.encode())
 
 if st.button("Submit"):
-    st.write("")
-    st.subheader("Output:")
-    st.write("")
-    
+
     if not plaintext or not key:
         st.write("Plaintext or key should not be empty.")
     else:
         def xor_encrypt(plaintext, key):
+            st.write("")
+            st.subheader("Output:")
+            st.write("")
+    
             """Encrypts plaintext using XOR cipher with the given key, st.writeing bits involved."""
             ciphertext = bytearray()
             for i in range(len(plaintext)):
