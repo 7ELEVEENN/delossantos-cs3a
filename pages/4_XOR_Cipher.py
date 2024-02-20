@@ -33,7 +33,7 @@ if st.button("Submit"):
         return xor_encrypt(ciphertext, key)  # XOR decryption is the same as encryption
 
 
-if not plaintext or not key:
+if not key:
     st.write("Plaintext or key should not be empty.")
 elif plaintext.decode() == key.decode():
     st.write("Plaintext should not be equal to the key")
