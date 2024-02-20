@@ -33,15 +33,17 @@ if st.button("Submit"):
         return xor_encrypt(ciphertext, key)  # XOR decryption is the same as encryption
 
 
-    if plaintext.decode() == key.decode():
-        st.write("Plaintext should not be equal to the key")
-    elif len(plaintext.decode()) < len(key.decode()):
-        st.write("Plaintext length should be equal or greater than the length of key")
-    else:
-        encrypted_text = xor_encrypt(plaintext, key)
-        st.write("Ciphertext:", encrypted_text.decode())
-        decrypted_text = xor_decrypt(encrypted_text, key)
-        st.write("Decrypted:", decrypted_text.decode())
+if not plaintext or not key:
+    st.write("Plaintext or key should not be empty.")
+elif plaintext.decode() == key.decode():
+    st.write("Plaintext should not be equal to the key")
+elif len(plaintext.decode()) < len(key.decode()):
+    st.write("Plaintext length should be equal or greater than the length of key")
+else:
+    encrypted_text = xor_encrypt(plaintext, key)
+    st.write("Ciphertext:", encrypted_text.decode())
+    decrypted_text = xor_decrypt(encrypted_text, key)
+    st.write("Decrypted:", decrypted_text.decode())
 
 
 
