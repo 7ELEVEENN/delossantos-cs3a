@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header("XOR Cipher")
+st.title("XOR Cipher")
 
 plaintext = st.text_area("Plain Text:")
 plaintext = bytes(plaintext.encode())
@@ -12,7 +12,9 @@ if st.button("Submit"):
 
     def xor_encrypt(plaintext, key):
         """Encrypts plaintext using XOR cipher with the given key, st.writeing bits involved."""
-        
+        st.write("")
+        st.subheader("Output:")
+        st.write("")
         ciphertext = bytearray()
         for i in range(len(plaintext)):
             plaintext_byte = plaintext[i]

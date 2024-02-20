@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header("Caesar Cipher")
+st.title("Caesar Cipher")
 
 text = st.text_input("Text:")
 shift_keys = list(map(int, st.text_input("Shift Keys:").split()))
@@ -8,6 +8,10 @@ shift_keys = list(map(int, st.text_input("Shift Keys:").split()))
 
 if st.button("Submit"):
 
+    st.write("")
+    st.subheader("Output:")
+    st.write("")
+    
     def encrypt_decrypt(text, shift_keys, ifdecrypt):
         """
         Encrypts a text using Caesar Cipher with a list of shift keys.
@@ -40,7 +44,7 @@ if st.button("Submit"):
                 
             else:
                 result+=char
-            # st.write(i, char, shift, result[i])
+            st.write(i, char, shift, result[i])
         return result
 
     # Example Usage
