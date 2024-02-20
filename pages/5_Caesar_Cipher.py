@@ -3,7 +3,7 @@ import streamlit as st
 st.header("Caesar Cipher")
 
 text = st.text_input("Text:")
-shift_keys = list(map(int, st.text_input("Shift Keys (space-separated):").split()))
+shift_keys = list(map(int, st.text_input("Shift Keys:").split()))
 
 
 if st.button("Submit"):
@@ -53,3 +53,5 @@ if st.button("Submit"):
     st.write("Shift keys:", *shift_keys)
     st.write("Cipher:", enc)
     st.write("Decrypted text:", dec)
+    st.balloons()
+
