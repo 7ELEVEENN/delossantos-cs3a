@@ -9,24 +9,21 @@ key = st.text_input("Key:")
 key = bytes(key.encode())
 
 if st.button("Submit"):
-
     if not plaintext or not key:
         st.write("Plaintext or key should not be empty.")
     else:
         def xor_encrypt(plaintext, key):
+            """Encrypts plaintext using XOR cipher with the given key, st.writeing bits involved."""
             st.write("")
             st.subheader("Output:")
             st.write("")
-    
-            """Encrypts plaintext using XOR cipher with the given key, st.writeing bits involved."""
             ciphertext = bytearray()
             for i in range(len(plaintext)):
                 plaintext_byte = plaintext[i]
                 key_byte = key[i % len(key)]
                 xor_result = plaintext_byte ^ key_byte
                 ciphertext.append(xor_result)
-
-                # st.write bits before XOR 
+                
                 st.write(f"Plaintext byte: {format(plaintext_byte, '08b')} = {chr(plaintext_byte)}")
                 st.write(f"Key byte:       {format(key_byte, '08b')} = {chr(key_byte)}")
                 st.write(f"XOR result:     {format(xor_result, '08b')} = {chr(xor_result)}")
