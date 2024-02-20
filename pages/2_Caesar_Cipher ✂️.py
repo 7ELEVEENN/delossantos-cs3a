@@ -43,15 +43,16 @@ if st.button("Submit"):
             # st.write(i, char, shift, result[i])
         return result
 
-    # Example usage
-    st.write("")
+    # Example Usage
     enc = encrypt_decrypt(text, shift_keys, False)
-    st.write("-"*10)
+    st.write("----------")  # Moved to correct position
     dec = encrypt_decrypt(enc, shift_keys, True)
-    st.write("-"*10)
+    st.write("----------")  # Moved to correct position
     st.write("\nText:", text)
     st.write("Shift keys:", *shift_keys)
     st.write("Cipher:", enc)
     st.write("Decrypted text:", dec)
     st.balloons()
+    st.snow()
+
 
